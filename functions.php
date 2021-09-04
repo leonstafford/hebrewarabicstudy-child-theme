@@ -16,7 +16,7 @@ add_filter( 'wp_title', 'accessible_minimalism_wp_title_for_home' );
 function accessible_minimalism_wp_title_for_home( $title )
 {
   if ( empty( $title ) && ( is_home() || is_front_page() ) ) {
-    $title = __( 'Hebrew &amp; Arabic Study', 'hebrewarabicchild' ) . ' | ' . get_bloginfo( 'description' );
+    $title = 'Hebrew &amp; Arabic Study';
   }
   return $title;
 }
