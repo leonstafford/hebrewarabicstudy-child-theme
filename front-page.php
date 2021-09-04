@@ -22,6 +22,8 @@ get_header();
     <li> to see me fork my <a href="">Accessible Minimalism Hugo Theme</a> to WordPress</li>
 </ul>
 
+<h2>My latest Hebrew &amp; Arabic study notes</h2>
+
 <?php
 // display recent Blog posts
 $the_query = new WP_Query(
