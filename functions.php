@@ -4,7 +4,6 @@
  *
  * @package HebrewArabicChildTheme
  */
-?>
 
 add_filter( 'wp_title', 'accessible_minimalism_wp_title_for_home' );
  
