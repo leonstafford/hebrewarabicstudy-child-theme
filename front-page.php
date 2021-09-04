@@ -33,17 +33,15 @@ $the_query = new WP_Query(
       
 if ( $the_query->have_posts() ) {
 
-    $recent_posts_output .= '<ul>';
+    echo '<ul>';
 
     while ( $the_query->have_posts() ) {
         $the_query->the_post();
-        $recent_posts_output .= '<li><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></li>';
+        echo '<li><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></li>';
     }
 }
 
-$recent_posts_output .= '</ul>';
-  
-echo $recent_posts_output;
+echo '</ul>';
   
 // reset after custom WP_Query (needed?)
 wp_reset_postdata();
