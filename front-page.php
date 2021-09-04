@@ -37,10 +37,19 @@ if ( $the_query->have_posts() ) {
 
     echo '<ul>';
 
-    while ( $the_query->have_posts() ) {
-        $the_query->the_post();
-        echo '<li><a href="' . get_the_permalink() .'">' . get_the_title() .'</a></li>';
-    }
+    while ( have_posts() ) {
+        the_post();
+
+?>
+       <li> 
+        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <?php the_title('', ''); ?></a>
+
+        <?php echo get_the_date(); ?>
+
+        </li>
+<?php 
+    } // end posts loop
 }
 
 echo '</ul>';
