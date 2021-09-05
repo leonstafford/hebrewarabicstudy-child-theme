@@ -9,6 +9,8 @@ get_header();
 
 ?>
 
+<p>Hi Rebecca~</p>
+
 <p><b>Welcome to my site!</b></p>
 
 <p>I created this site for a few reasons:</p>
