@@ -26,7 +26,7 @@ get_header();
 // display recent Blog posts
 $the_query = new WP_Query(
     [ 
-        'category_name' => 'blog', 
+        'cat' => 2, 
         'posts_per_page' => 5 
     ]
  ); 
