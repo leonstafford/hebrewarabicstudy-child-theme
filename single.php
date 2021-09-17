@@ -11,6 +11,8 @@ $category = get_queried_object();
 
 echo get_cat_name( $category->term_id );
 
+echo "SINGLE POST";
+
 if ( have_posts() ) {
 ?>
 
