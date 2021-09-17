@@ -30,6 +30,8 @@ $the_query = new WP_Query(
         'posts_per_page' => 5 
     ]
  ); 
+
+var_dump($the_query);
       
 if ( $the_query->have_posts() ) {
 
