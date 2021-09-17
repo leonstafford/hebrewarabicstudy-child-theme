@@ -22,12 +22,39 @@ function accessible_minimalism_wp_title_for_home( $title )
   return $title;
 }
 
-function accessible_minimalism_category_template( $template ) {
-    if ( cat_is_ancestor_of( 4, get_queried_object_id() /* The current category ID */ ) )
-    {
-        $template = locate_template( 'category-resource.php' );
+function accessible_minimalism_display_latest_blog_posts() {
+    // display recent Blog posts
+    $the_query = new WP_Query(
+        [ 
+            'cat' => 2, 
+            'posts_per_page' => 5 
+        ]
+     ); 
+
+    var_dump($the_query);
+          
+    if ( $the_query->have_posts() ) {
+
+        echo '<ul>';
+
+        while ( have_posts() ) {
+            the_post();
+
+    ?>
+           <li> 
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <?php the_title('', ''); ?></a>
+
+            <?php echo get_the_date(); ?>
+
+            </li>
+    <?php 
+        } // end posts loop
     }
 
-    return $template;
-}
+    echo '</ul>';
+      
+    // reset after custom WP_Query (needed?)
+    wp_reset_postdata();
 
+}

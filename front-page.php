@@ -22,43 +22,7 @@ get_header();
 
 <h2>My latest Hebrew &amp; Arabic study notes</h2>
 
-<?php
-// display recent Blog posts
-$the_query = new WP_Query(
-    [ 
-        'cat' => 2, 
-        'posts_per_page' => 5 
-    ]
- ); 
+<?php accessible_minimalism_display_latest_blog_posts(); ?>
 
-var_dump($the_query);
-      
-if ( $the_query->have_posts() ) {
-
-    echo '<ul>';
-
-    while ( have_posts() ) {
-        the_post();
-
-?>
-       <li> 
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-            <?php the_title('', ''); ?></a>
-
-        <?php echo get_the_date(); ?>
-
-        </li>
-<?php 
-    } // end posts loop
-}
-
-echo '</ul>';
-  
-// reset after custom WP_Query (needed?)
-wp_reset_postdata();
-
-get_footer();
-?>
-
-
+<?php get_footer(); ?>
 
