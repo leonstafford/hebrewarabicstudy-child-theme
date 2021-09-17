@@ -31,4 +31,3 @@ function accessible_minimalism_category_template( $template ) {
     return $template;
 }
 
-add_filter( 'category_template', 'accessible_minimalism_category_template' );
